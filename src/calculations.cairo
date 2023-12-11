@@ -37,16 +37,3 @@ fn check_even(num_1: usize, num_2: usize) -> bool {
     }
 }
 
-fn check_even ( num_6: u32, num_7: u32) -> bool{
-   let result:u32 = num_6 + num_7;
-   if result % 2 == 0 {
-      'true'.print();
-      true 
-   } else {
-      false
-   }
-
-}
-
-
-

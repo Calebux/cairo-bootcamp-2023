@@ -1,5 +1,6 @@
 #[starknet::contract]
 use starknet::ContractAddress;
+use starknet::Vec;
 
 
 mod class_demo {
@@ -10,7 +11,16 @@ mod class_demo {
         is_active: bool,
         has_reward: bool,
         reward_balanced: u256,
-        is_owing: bool
+        is_owing: bool,
+        legacy_mapping: Vec<(ContractAddress, LegacyMappingValue)>,
+    }
+
+    // #[storage]
+    struct LegacyMappingValue {
+       wallet_address: u256,
+        active: bool,
+    }
+
     }
 
     #[external(v0)]
@@ -64,4 +74,4 @@ mod class_demo {
     fn get_is_owing(self: @ContractState) -> bool {
         self.is_owing.read()
     }
-}
+
